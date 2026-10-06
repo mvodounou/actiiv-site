@@ -1,0 +1,209 @@
+/* Actiiv website. System fonts only: no third-party requests. */
+
+:root {
+  --bg: #f6f3ef;
+  --surface: #ffffff;
+  --text: #1c1720;
+  --muted: #5b5560;
+  --border: #e6e0d8;
+  --accent: #e9126b;
+  --accent-strong: #c20d58;
+  --accent-soft: #fce1ee;
+  --on-accent: #ffffff;
+  --sky-soft: #e4e9fc;
+  --moss-soft: #dff0e4;
+  --shadow: 0 24px 48px -28px rgba(28, 23, 32, 0.4);
+  --radius: 20px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0a0d;
+    --surface: #1c1e24;
+    --text: #f0f5fa;
+    --muted: #a3b0c6;
+    --border: #2c2e36;
+    --accent: #ff4d94;
+    --accent-strong: #ff7aae;
+    --accent-soft: #451429;
+    --on-accent: #14060b;
+    --sky-soft: #213045;
+    --moss-soft: #163524;
+    --shadow: 0 28px 52px -28px rgba(0, 0, 0, 0.8);
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent-strong); }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.skip {
+  position: absolute; left: -999px; top: 8px; background: var(--surface);
+  padding: 8px 14px; border-radius: 8px; z-index: 10;
+}
+.skip:focus { left: 8px; }
+
+/* Header */
+header.site { padding: 18px 0; }
+.nav-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; }
+.brand b { color: var(--accent); font-weight: inherit; }
+nav.links { display: flex; gap: 22px; flex-wrap: wrap; }
+nav.links a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+nav.links a:hover { color: var(--text); }
+@media (max-width: 720px) { nav.links { display: none; } }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px;
+  font-weight: 700; text-decoration: none; border: 2px solid transparent; font-size: 1rem;
+}
+.btn-accent { background: var(--accent); color: var(--on-accent); }
+.btn-accent:hover { background: var(--accent-strong); }
+.btn-ghost { border-color: var(--border); color: var(--text); background: var(--surface); }
+.btn-ghost:hover { border-color: var(--accent); }
+.btn[aria-disabled="true"] { opacity: 0.85; cursor: default; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding: 36px 20px 56px; }
+.eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-strong); }
+h1 { font-family: var(--font-display); font-size: clamp(2.3rem, 5.4vw, 4rem); line-height: 1.04; letter-spacing: -0.03em; margin: 12px 0 18px; }
+h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.12; letter-spacing: -0.02em; margin: 8px 0 12px; }
+h3 { font-size: 1.1rem; margin: 0 0 6px; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 46ch; margin: 0 0 26px; }
+.cta-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.fine { font-size: 0.88rem; color: var(--muted); margin-top: 14px; }
+.hero-shots { position: relative; display: flex; justify-content: center; align-items: flex-end; gap: 0; min-height: 440px; }
+.hero-shots .phone { flex: 0 0 auto; width: 34%; }
+.hero-shots .phone + .phone { margin-left: -4%; }
+.hero-shots .phone:nth-child(1) { transform: rotate(-4deg); z-index: 1; }
+.hero-shots .phone:nth-child(2) { transform: translateY(-22px); z-index: 2; width: 40%; }
+.hero-shots .phone:nth-child(3) { transform: rotate(4deg); z-index: 1; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding-top: 12px; }
+  .hero-shots { min-height: 0; margin-top: 8px; }
+}
+
+/* Phone frames */
+.phone {
+  border-radius: 34px; overflow: hidden; background: #000; border: 6px solid #15151a;
+  box-shadow: var(--shadow);
+}
+.phone img { width: 100%; }
+
+/* Sections */
+section.block { padding: 64px 0; }
+.section-head { max-width: 62ch; margin-bottom: 32px; }
+.section-head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
+.grid { display: grid; gap: 18px; }
+.grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) { .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.card p { margin: 0; color: var(--muted); }
+.icon {
+  width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 14px;
+  background: var(--accent-soft); color: var(--accent-strong); font-size: 1.3rem;
+}
+
+/* Steps */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.step::before {
+  counter-increment: step; content: "0" counter(step); display: block; font-weight: 800;
+  color: var(--accent-strong); font-variant-numeric: tabular-nums; margin-bottom: 8px;
+}
+.step p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* Split (text + image) */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.split.flip .split-media { order: -1; }
+.split ul { padding-left: 1.1rem; color: var(--muted); }
+.split li { margin: 8px 0; }
+.split li strong { color: var(--text); }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; gap: 28px; } .split.flip .split-media { order: 0; } }
+.split-media { display: flex; justify-content: center; }
+.split-media .phone { width: min(100%, 300px); }
+
+/* Apple Watch */
+.hero-watch { position: absolute; right: -2%; bottom: -14px; width: min(30%, 150px); z-index: 3; }
+.hero-watch .watch-frame { width: 100%; padding: 7px; border-radius: 40px; border: 2px solid rgba(255,255,255,0.08); }
+.hero-watch .watch-screen { border-radius: 33px; }
+@media (max-width: 860px) { .hero-watch { right: 2%; } }
+.watch { text-align: center; }
+.watch figcaption { margin-top: 14px; font-size: 0.92rem; color: var(--muted); }
+.watch-frame {
+  width: min(78%, 260px); margin: 0 auto; padding: 12px; background: #15151a; border-radius: 64px;
+  box-shadow: var(--shadow);
+}
+.watch-screen { position: relative; border-radius: 52px; overflow: hidden; background: #000; }
+.watch-screen img { width: 100%; }
+/* Hides the "iPhone not connected" glyph shown because the simulator Watch has no paired iPhone. */
+.watch-mask { position: absolute; left: 64.5%; top: 6.5%; width: 9.5%; height: 9%; background: #000; }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.gallery figure { margin: 0; }
+.gallery figcaption { margin-top: 12px; font-size: 0.92rem; color: var(--muted); text-align: center; }
+@media (max-width: 900px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+
+/* Levels */
+.levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.level { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
+.level strong { display: block; font-size: 1.05rem; }
+.level span { color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 860px) { .levels { grid-template-columns: 1fr 1fr; } }
+
+/* Privacy strip */
+.strip { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 30px; align-items: center; }
+.strip ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.strip li::before { content: "✓"; color: var(--accent-strong); font-weight: 800; margin-right: 10px; }
+@media (max-width: 860px) { .strip { grid-template-columns: 1fr; } }
+
+/* FAQ */
+details { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; margin-bottom: 10px; }
+summary { cursor: pointer; font-weight: 600; padding: 14px 0; }
+details p { color: var(--muted); margin: 0 0 16px; }
+
+/* CTA */
+.cta-band { background: var(--accent-soft); border-radius: 28px; padding: 44px 28px; text-align: center; }
+.cta-band p { color: var(--muted); max-width: 52ch; margin: 0 auto 22px; }
+
+/* Footer */
+footer.site { border-top: 1px solid var(--border); margin-top: 64px; padding: 30px 0 46px; color: var(--muted); font-size: 0.92rem; }
+.foot { display: flex; flex-wrap: wrap; gap: 18px 32px; justify-content: space-between; }
+.foot nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.foot a { color: var(--muted); }
+.disclaimer { margin-top: 18px; max-width: 80ch; font-size: 0.86rem; }
+
+/* Long-form pages */
+.doc { max-width: 760px; padding: 24px 20px 40px; }
+.doc h1 { font-size: clamp(2rem, 4.4vw, 3rem); }
+.doc h2 { font-size: 1.4rem; margin-top: 40px; }
+.doc p, .doc li { color: var(--muted); }
+.doc li { margin: 6px 0; }
+.doc strong { color: var(--text); }
+.doc .meta { color: var(--muted); font-size: 0.92rem; }
+.doc table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.doc th, .doc td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.doc th { color: var(--text); }
+.doc td { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

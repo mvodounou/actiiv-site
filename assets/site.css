@@ -189,7 +189,7 @@ section.block:not(.alt) .card, section.block:not(.alt) .step, section.block:not(
 .watch-screen { position: relative; border-radius: 52px; overflow: hidden; background: #000; }
 .watch-screen img { width: 100%; }
 /* Hides the "iPhone not connected" glyph shown because the simulator Watch has no paired iPhone. */
-.watch-mask { position: absolute; left: 64.5%; top: 6.5%; width: 9.5%; height: 9%; background: #000; }
+.watch-mask { position: absolute; left: 64.5%; top: 6.5%; width: 7.4%; height: 9%; background: #000; }
 
 /* Gallery */
 .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }

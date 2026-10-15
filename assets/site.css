@@ -212,6 +212,8 @@ section.block:not(.alt) .card, section.block:not(.alt) .step, section.block:not(
 .strip li::before { content: "\2713"; color: var(--accent); font-weight: 600; margin-right: 12px; }
 @media (max-width: 860px) { .strip { grid-template-columns: 1fr; } }
 
+section.block.alt .strip { background: var(--tile); }
+
 /* FAQ: hairline rows, no boxes */
 #faq .wrap { max-width: 760px; }
 details { border-top: 1px solid var(--hairline); padding: 0; margin: 0; }
